@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<title>Electro - HTML Ecommerce Template</title>
+<title>Hieu@Store</title>
 
 <!-- Google font -->
 <link
@@ -94,45 +94,45 @@
 				<div class="col-md-4 col-xs-6">
 					<div class="shop">
 						<div class="shop-img">
+							<img src="<%=dsspshopnow.get(10).getImage()%>" alt="">
+						</div>
+						<div class="shop-body">
+							<h3>
+								<%=dsspshopnow.get(10).getName()%><br>Collection
+							</h3>
+							<a href="#" class="cta-btn">Shop now <i
+								class="fa fa-arrow-circle-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /shop -->
+
+				<!-- shop -->
+				<div class="col-md-4 col-xs-6">
+					<div class="shop">
+						<div class="shop-img">
+							<img src="<%=dsspshopnow.get(11).getImage()%>" alt="">
+						</div>
+						<div class="shop-body">
+							<h3>
+								<%=dsspshopnow.get(11).getName()%><br>Collection
+							</h3>
+							<a href="#" class="cta-btn">Shop now <i
+								class="fa fa-arrow-circle-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /shop -->
+
+				<!-- shop -->
+				<div class="col-md-4 col-xs-6">
+					<div class="shop">
+						<div class="shop-img">
 							<img src="<%=dsspshopnow.get(12).getImage()%>" alt="">
 						</div>
 						<div class="shop-body">
 							<h3>
 								<%=dsspshopnow.get(12).getName()%><br>Collection
-							</h3>
-							<a href="#" class="cta-btn">Shop now <i
-								class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /shop -->
-
-				<!-- shop -->
-				<div class="col-md-4 col-xs-6">
-					<div class="shop">
-						<div class="shop-img">
-							<img src="<%=dsspshopnow.get(5).getImage()%>" alt="">
-						</div>
-						<div class="shop-body">
-							<h3>
-								<%=dsspshopnow.get(2).getName()%><br>Collection
-							</h3>
-							<a href="#" class="cta-btn">Shop now <i
-								class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /shop -->
-
-				<!-- shop -->
-				<div class="col-md-4 col-xs-6">
-					<div class="shop">
-						<div class="shop-img">
-							<img src="<%=dsspshopnow.get(9).getImage()%>" alt="">
-						</div>
-						<div class="shop-body">
-							<h3>
-								<%=dsspshopnow.get(3).getName()%><br>Collection
 							</h3>
 							<a href="#" class="cta-btn">Shop now <i
 								class="fa fa-arrow-circle-right"></i></a>

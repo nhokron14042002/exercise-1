@@ -58,15 +58,49 @@
 				</ul>
 				<ul class="header-links pull-right">
 				
+				<!-- check account -->
+				<%
+				 Account manager = (Account) session.getAttribute("acc");
+				     if (manager != null){
+				             if(manager.getIsAdmin() == 1){
 				
+                %>
+                 	<li><a href="Login.jsp"><i class="fa fa-user-o"></i> Manager Account</a></li>
+				
+				
+				 <%
+						
+					}
+				 %>	
+				<!--End check account -->
+				
+				<!-- Check manager product  -->
+				<%
+				            
+	                             
+				             if(manager.getIsSell() == 1 ){
+				
+                 %>
+					   <li><a href="ManagerControl"><i class="fa fa-user-o"></i> Manager Product</a></li>
+				<%
+						
+					         }
+				
+				     }
+				
+				%>	
+				
+				<!-- End check manager product  -->
 				
 			   
 					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 					
+				 
+				 
 				   
 				<!--  check login  -->	
 				<%
-				      Account nameLogin = (Account) session.getAttribute("acc");
+				  Account nameLogin = (Account) session.getAttribute("acc");
 				             if(nameLogin == null){
 				
                  %>
@@ -93,35 +127,7 @@
 				
 				%>	
 				
-				<%-- <!-- check account -->
-				<%
-				             
-				             if(nameLogin.getIsAdmin()!=0){
 				
-                 %>
-					<li><a href="Login.jsp"><i class="fa fa-user-o"></i> Manager Account</a></li>
-				<%
-						
-					}
-				
-				%>	
-				<!--End check account -->
-				
-				<!-- Check manager product  -->
-				<%
-				            
-	                             
-				             if(nameLogin.getIsSell() != 0){
-				
-                 %>
-					   <li><a href="Login.jsp"><i class="fa fa-user-o"></i> Manager Product</a></li>
-				<%
-						
-					}
-				
-				%>	
-				
-				<!-- End check manager product  --> --%>
 					
 				</ul>
 			</div>
