@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<title>HIEU STORE</title>
+<title>Hieu@Store</title>
 
 <!-- Google font -->
 <link
@@ -83,8 +83,7 @@
                  %>
 					   <li><a href="ManagerControl"><i class="fa fa-user-o"></i> Manager Product</a></li>
 				<%
-						
-					         }
+				             }	
 				
 				     }
 				
@@ -92,8 +91,9 @@
 				
 				<!-- End check manager product  -->
 				
+				
 			   
-					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+					
 					
 				 
 				 
@@ -103,15 +103,30 @@
 				  Account nameLogin = (Account) session.getAttribute("acc");
 				             if(nameLogin == null){
 				
-                 %>
-					<li><a href="Login.jsp"><i class="fa fa-user-o"></i> Login</a></li>
+                 %> 
+                    
+				    <li><a href="Login.jsp"> Login To Buy  </a><i
+							class="fa fa-heart-o" aria-hidden="true"></i></li>			
+					
 				<%
 						
 					}
 				
 				%>	
 				<!-- End check login  -->
+				<%
+				     
+				             if((nameLogin != null) && (nameLogin.getIsAdmin() == 0) && (nameLogin.getIsAdmin() == 0) ){
 				
+                 %>
+                    <li><a href="#"><i class="fa fa-dollar"></i> Pay </a></li>
+                    <li><a href="#"><i class="fa fa-user-o"></i>History Buy</a></li>
+					
+				<%
+						
+					}
+				
+				%>	
 				
 				
 				<%
@@ -155,8 +170,7 @@
 							<form action="SearchControl" method="post"  >
 								<select class="input-select">
 									<option value="0">All Categories</option>
-									<option value="1">Category 01</option>
-									<option value="1">Category 02</option>
+									
 								</select>
 							    	
 								<input value="${txtS}" name="txt"  class="input"  placeholder="Search here">
@@ -178,13 +192,28 @@
 							</div>
 							<!-- /Wishlist -->
 
-							<!-- Cart -->
+
+
+
+
+
+                           	
+							<%   
+							
+							Account nameLoginGio = (Account) session.getAttribute("acc");
+				                          if(nameLoginGio != null){
+							
+			             	%>
 							<div class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown"
-									aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Your
-										Cart</span>
+							
+								<a href="giohangctl"  
+									  > <i class="fa fa-shopping-cart"></i> <span> 
+									
+									   Your	Cart</span>
 									<div class="qty">12</div>
 								</a>
+								
+								
 								<div class="cart-dropdown">
 									<div class="cart-list">
 										<div class="product-widget">
@@ -231,6 +260,47 @@
 									</div>
 								</div>
 							</div>
+							
+							
+							<%
+				                          }
+				                          
+				                          
+							
+							%>
+							<!-- /Cart -->
+
+
+							<!-- Cart -->
+							
+							
+							
+							<%   
+							
+							Account nameLoginGioNull = (Account) session.getAttribute("acc");
+				                          if(nameLoginGio == null){
+							
+			             	%>
+							<div class="dropdown">
+							
+								<a href="LoginControl"  
+									  > <i class="fa fa-shopping-cart"></i> <span> 
+									
+									   Your	Cart</span>
+									<div class="qty">12</div>
+								</a>
+								
+								
+								
+							</div>
+							
+							
+							<%
+				                          }
+				                          
+				                          
+							
+							%>
 							<!-- /Cart -->
 
 							<!-- Menu Toogle -->

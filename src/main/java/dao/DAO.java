@@ -5,7 +5,6 @@
  */
 package dao;
 
-import context.DBContext;
 import entity.Account;
 import entity.Category;
 import entity.Product;
@@ -14,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import bo.DBContext;
 
 /**
  *

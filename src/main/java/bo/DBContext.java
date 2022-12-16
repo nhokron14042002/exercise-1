@@ -1,5 +1,5 @@
 
-package context;
+package bo;
 
 
 import java.sql.Connection;

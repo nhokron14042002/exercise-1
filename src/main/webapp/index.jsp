@@ -1,3 +1,4 @@
+<%@page import="entity.Account"%>
 <%@page import="entity.Category"%>
 <%@page import="entity.Product"%>
 <%@page import="java.util.ArrayList"%>
@@ -239,9 +240,12 @@
 											</div>
 										</div>
 										<div class="add-to-cart">
+										
 											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> add to cart
+											   <i class="fa fa-shopping-cart"></i><a href="CartControl?pid=<%=l.getId()%>"> add to cart
+											</a>
 											</button>
+											
 										</div>
 									</div>
 									<!-- /product -->
@@ -395,11 +399,61 @@
 												</button>
 											</div>
 										</div>
+										
+										<%   
+							              
+							              Account addGioNull = (Account) session.getAttribute("acc");
+				                          if(addGioNull == null){
+							
+			             	            %>
+										
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn">
+										
+										
+										
+										<a href="LoginControl" class="add-to-cart-btn" >
+										
+										 add to cart
+										
+										</a>
+										
+											<%-- <button class="add-to-cart-btn"   type="button" onclick="CartControl?pid=<%=l.getId()%>" >
 												<i class="fa fa-shopping-cart"></i> add to cart
-											</button>
+											</button> --%>
 										</div>
+										<%
+				                          }
+										
+										%>
+										
+										
+										
+										<%   
+							              
+							             
+				                          if(addGioNull != null){
+							
+			             	            %>
+										
+										<div class="add-to-cart">
+										
+										
+										
+										<a href="giohangctl?ms=<%=l.getId()%>&ts=<%=l.getName()%>&gia=<%=l.getPrice()%>
+										&anh=<%=l.getImage()%>" class="add-to-cart-btn" >
+										
+										 add to cart
+										
+										</a>
+										
+											<%-- <button class="add-to-cart-btn"   type="button" onclick="CartControl?pid=<%=l.getId()%>" >
+												<i class="fa fa-shopping-cart"></i> add to cart
+											</button> --%>
+										</div>
+										<%
+				                          }
+										
+										%>
 									</div>
 									<!-- /product -->
 									<%

@@ -1,16 +1,14 @@
-<%-- 
-    Document   : Cart
-    Created on : Oct 31, 2020, 9:42:21 PM
-    Author     : trinh
---%>
 
 
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="entity.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Hieu@Store</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
@@ -33,6 +31,7 @@
                                                     <th scope="col" class="border-0 bg-light">
                                                         <div class="p-2 px-3 text-uppercase">Sản Phẩm</div>
                                                     </th>
+                                                    
                                                     <th scope="col" class="border-0 bg-light">
                                                         <div class="py-2 text-uppercase">Đơn Giá</div>
                                                     </th>
@@ -45,7 +44,16 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <c:forEach items="${list}" var="o">
+                                            
+                                            
+                                            <%
+                                            
+                                           
+				                            ArrayList<Product> dsspshopnow = (ArrayList<Product>) request.getAttribute("listP");
+				                                       if (dsspshopnow != null) {
+					                                           for (Product l : dsspshopnow )
+				                            %>
+                                           
                                                 <tr>
                                                     <th scope="row">
                                                         <div class="p-2">
@@ -66,7 +74,15 @@
                                                         </a>
                                                     </td>
                                                 </tr> 
-                                            </c:forEach>
+                                          
+                                            
+                                            <%
+				                                       }
+				                                       
+				                                       
+                                            
+                                            
+                                            %>
                                         </tbody>
                                     </table>
                                 </div>
