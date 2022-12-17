@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="entity.Account"%>
 <%@page import="entity.Category"%>
 <%@page import="entity.Product"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Detail</title>
+        <title>Detail Hieu@Store</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -164,8 +165,34 @@
                                             
                                         </div> <!-- row.// -->
                                         <hr>
+                                       
+                                        
                                         <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        
+                                        <%
+                                           
+                                           Account kh = (Account) session.getAttribute("acc");
+				                                  if (kh != null) {
+				                        %>
+                                        <a href="giohangctl?ms=<%=dsproduct.getId()%>&ts=<%=dsproduct.getName()%>&gia=<%=dsproduct.getPrice()%>
+										&anh=<%=dsproduct.getImage()%>" class="btn btn-lg btn-outline-primary text-uppercase">  Add to cart </a>
+                                        
+                                        <%
+				                                  }
+                                        
+                                        %>
+                                        
+                                         <%
+                                           
+                                          
+				                                  if (kh == null) {
+				                        %>
+                                        <a href="LoginControl" class="btn btn-lg btn-outline-primary text-uppercase">  Add to cart </a>
+                                        
+                                        <%
+				                                  }
+                                        
+                                        %>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
