@@ -35,16 +35,11 @@
 <!-- Custom stlylesheet -->
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+
 
 </head>
 <body>
-	 <jsp:include page="Menuheader.jsp"></jsp:include>
+	<jsp:include page="Menuheader.jsp"></jsp:include>
 
 	<!-- NAVIGATION -->
 	<nav id="navigation">
@@ -60,7 +55,7 @@
 					<%
 					ArrayList<Category> dsloaigiay1 = (ArrayList<Category>) request.getAttribute("listCC");
 					if (dsloaigiay1 != null) {
-		   				for (Category l : dsloaigiay1) {
+						for (Category l : dsloaigiay1) {
 					%>
 
 					<li><a href="HomeControl?cid=<%=l.getCid()%>"><%=l.getCname()%></a></li>
@@ -89,7 +84,7 @@
 				<%
 				ArrayList<Product> dsspshopnow = (ArrayList<Product>) request.getAttribute("listP");
 				if (dsspshopnow != null) {
-					for (Product l : dsspshopnow )
+					for (Product l : dsspshopnow)
 				%>
 				<!-- shop -->
 				<div class="col-md-4 col-xs-6">
@@ -240,12 +235,14 @@
 											</div>
 										</div>
 										<div class="add-to-cart">
-										
+
 											<button class="add-to-cart-btn">
-											   <i class="fa fa-shopping-cart"></i><a href="CartControl?pid=<%=l.getId()%>"> add to cart
-											</a>
+												<i class="fa fa-shopping-cart"></i><a
+													href="giohangctl?ms=<%=l.getId()%>&ts=<%=l.getName()%>&gia=<%=l.getPrice()%>
+										&anh=<%=l.getImage()%>">
+													add to cart </a>
 											</button>
-											
+
 										</div>
 									</div>
 									<!-- /product -->
@@ -399,60 +396,44 @@
 												</button>
 											</div>
 										</div>
-										
-										<%   
-							              
-							              Account addGioNull = (Account) session.getAttribute("acc");
-				                          if(addGioNull == null){
-							
-			             	            %>
-										
-										<div class="add-to-cart">
-										
-										
-										
-										<a href="LoginControl" class="add-to-cart-btn" >
-										
-										 add to cart
-										
-										</a>
-										
-											<%-- <button class="add-to-cart-btn"   type="button" onclick="CartControl?pid=<%=l.getId()%>" >
-												<i class="fa fa-shopping-cart"></i> add to cart
-											</button> --%>
-										</div>
+
 										<%
-				                          }
-										
+										Account addGioNull = (Account) session.getAttribute("acc");
+										if (addGioNull == null) {
 										%>
-										
-										
-										
-										<%   
-							              
-							             
-				                          if(addGioNull != null){
-							
-			             	            %>
-										
+
 										<div class="add-to-cart">
-										
-										
-										
-										<a href="giohangctl?ms=<%=l.getId()%>&ts=<%=l.getName()%>&gia=<%=l.getPrice()%>
-										&anh=<%=l.getImage()%>" class="add-to-cart-btn" >
-										
-										 add to cart
-										
-										</a>
-										
-											<%-- <button class="add-to-cart-btn"   type="button" onclick="CartControl?pid=<%=l.getId()%>" >
-												<i class="fa fa-shopping-cart"></i> add to cart
-											</button> --%>
+
+											<button class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i><a href="LoginControl">
+													add to cart </a>
+											</button>
+
+											
 										</div>
 										<%
-				                          }
-										
+										}
+										%>
+
+
+
+										<%
+										if (addGioNull != null) {
+										%>
+
+										<div class="add-to-cart">
+
+											<button class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i><a
+													href="giohangctl?ms=<%=l.getId()%>&ts=<%=l.getName()%>&gia=<%=l.getPrice()%>
+										&anh=<%=l.getImage()%>">
+													add to cart </a>
+											</button>
+
+
+										</div>
+										<%
+										}
 										%>
 									</div>
 									<!-- /product -->
@@ -492,23 +473,22 @@
 
 
 				<div class="col-md-4 col-xs-6">
-				
-				 <%
-									ArrayList<Product> dsproducttop1 = (ArrayList<Product>) request.getAttribute("listP");
-									if (dsproducttop1 != null) {
-										
-				 %>
-							  
-				 <div class="section-title">
+
+					<%
+					ArrayList<Product> dsproducttop1 = (ArrayList<Product>) request.getAttribute("listP");
+					if (dsproducttop1 != null) {
+					%>
+
+					<div class="section-title">
 						<h4 class="title">Top selling</h4>
 						<div class="section-nav">
 							<div id="slick-nav-3" class="products-slick-nav"></div>
 						</div>
 					</div>
-                  
+
 					<div class="products-widget-slick" data-nav="#slick-nav-3">
 						<div>
-                             
+
 
 							<!-- product widget -->
 							<div class="product-widget">
@@ -745,22 +725,19 @@
 						</div>
 					</div>
 				</div>
-				 <%
-										}
-									
-							  
-				 %>
-				
-					
+				<%
+				}
+				%>
+
+
 
 				<div class="clearfix visible-sm visible-xs"></div>
 
 				<div class="col-md-4 col-xs-6">
-				<%
-									ArrayList<Product> dsproducttop2 = (ArrayList<Product>) request.getAttribute("listP");
-									if (dsproducttop2 != null) {
-										
-				 %>
+					<%
+					ArrayList<Product> dsproducttop2 = (ArrayList<Product>) request.getAttribute("listP");
+					if (dsproducttop2 != null) {
+					%>
 					<div class="section-title">
 						<h4 class="title">Top selling</h4>
 						<div class="section-nav">
@@ -879,14 +856,13 @@
 								</div>
 							</div>
 							<!-- /product widget -->
-							
-							
+
+
 						</div>
-						
+
 						<%
-									}
-										
-				 %>
+						}
+						%>
 					</div>
 				</div>
 
@@ -929,7 +905,7 @@
 	</div>
 	<!-- /NEWSLETTER -->
 
-	 <jsp:include page="Menufooter.jsp"></jsp:include>
+	<jsp:include page="Menufooter.jsp"></jsp:include>
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

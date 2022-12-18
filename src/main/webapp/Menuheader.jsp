@@ -119,8 +119,8 @@
 				             if((nameLogin != null) && (nameLogin.getIsAdmin() == 0) && (nameLogin.getIsAdmin() == 0) ){
 				
                  %>
-                    <li><a href="#"><i class="fa fa-dollar"></i> Pay </a></li>
-                    <li><a href="#"><i class="fa fa-user-o"></i>History Buy</a></li>
+                    <li><a href="thanhtoanctl"><i class="fa fa-dollar"></i> Pay </a></li>
+                    <li><a href="HistoryStoreControl"><i class="fa fa-user-o"></i>History Buy</a></li>
 					
 				<%
 						

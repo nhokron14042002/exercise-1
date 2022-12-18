@@ -55,7 +55,7 @@
 
 			tongtien += h.getTotalMoney();
 	%>
-				<form action="EditControl?ms=<%=h.getId()%>" method="post">
+				<form action="suaxoacls?ms=<%=h.getId()%>" method="post">
 					<tr>
 
 						<td><%=h.getId()%></td>
@@ -72,7 +72,8 @@
 						<td><%=h.getTotalMoney()%></td>
 
 						<td><input class="btn-primary" name="butsua" type="submit"
-							value="Update"> <input class="btn-primary" name="butxoa"
+							value="Update">
+							 <input class="btn-primary" name="butxoa"
 							type="submit" value="Delete">
 				</form>
 
@@ -118,9 +119,9 @@
 
 			</table>
 
-			<form action="damuactl" method="post">
+			<form action="thanhtoanctl" method="post">
 
-				<button name="abc" type="submit" value="">Đặt Mua</button>
+				<button name="abc" type="submit" value="">Đặt mua</button>
 
 			</form>
 
