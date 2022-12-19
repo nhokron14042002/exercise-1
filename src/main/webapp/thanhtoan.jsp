@@ -102,7 +102,7 @@
     </table>
 <table>
 	<h3><span class="label label-info">Tổng tiền: <%=tongtien %> VND</span></h3>
-	    <form action="HistoryStoreControl" method="get">
+	    <form action="datmuactl" method="get">
     
     	<input class="btn-primary" name ="" type="submit" value="Thanh toán">
     	
